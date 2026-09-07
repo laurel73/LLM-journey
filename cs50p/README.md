@@ -9,9 +9,9 @@ Python 基础阶段的正式教材，替代原计划的《Python 编程：从入
 |---|---|---|---|
 | W0 | Functions, Variables | ✅ 完成 | indoor, playback, einstein, tip, faces |
 | W1 | Conditionals | ✅ 完成 | deep, bank, extensions, interpreter, meal |
-| W2 | Loops | ⬜ | |
-| W3 | Exceptions | ⬜ | |
-| W4 | Libraries | ⬜ | |
+| W2 | Loops | ✅ 完成 | camel, coke, nutrition, plates, twttr |
+| W3 | Exceptions | ✅ 完成 | fuel, grocery, outdated, taqueria |
+| W4 | Libraries | ✅ 完成 | adieu, bitcoin, emojize, figlet, guessing, professor |
 | W5 | Unit Tests | ⬜ | |
 | W6 | File I/O | ⬜ | |
 | W7 | Regular Expressions | ⬜ | |
@@ -38,3 +38,26 @@ Python 基础阶段的正式教材，替代原计划的《Python 编程：从入
 - `extensions.py` — 根据扩展名输出 MIME 类型
 - `interpreter.py` — 数学表达式解释器
 - `meal.py` — 判断当前是否是用餐时间
+
+**Week 2（Loops）** — 2026-09-07
+- `camel.py` — camelCase 转 snake_case
+- `coke.py` — 投币找零循环
+- `nutrition.py` — 查水果热量
+- `plates.py` — 车牌号合法性校验
+- `twttr.py` — 去掉元音
+
+**Week 3（Exceptions）** — 2026-09-07
+- `fuel.py` — 分数转百分比，含 X/Y 与小数异常处理
+- `grocery.py` — 统计清单数量，忽略大小写
+- `outdated.py` — 日期格式转换，含月份单词与 9/8 格式
+- `taqueria.py` — 点餐计价，忽略无效菜品
+
+**Week 4（Libraries）** — 2026-09-07
+- `adieu.py` — 告别名单（`inflect.join` 自动处理 and / 牛津逗号）
+- `bitcoin.py` — 调 CoinCap API 查询比特币价格
+- `emojize.py` — `:code:` 转 emoji
+- `figlet.py` — ASCII 艺术字体
+- `guessing.py` — 猜数字
+- `professor.py` — 从 YouTube 链接提取视频 ID
+
+> Week 4 依赖 `emoji` `pyfiglet` `inflect` 三个第三方库，已在 `D:\llm-journey\.venv` 装好（2026-09-07）。
