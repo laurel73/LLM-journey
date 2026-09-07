@@ -28,7 +28,7 @@ Python 基础阶段的正式教材，替代原计划的《Python 编程：从入
 | W2 | Loops | ✅ 完成 | camel, coke, nutrition, plates, twttr |
 | W3 | Exceptions | ✅ 完成 | fuel, grocery, outdated, taqueria |
 | W4 | Libraries | ✅ 完成 | adieu, bitcoin, emojize, figlet, guessing, professor |
-| W5 | Unit Tests | ⬜ | |
+| W5 | Unit Tests | ✅ 完成 | bank, fuel, plates, twttr + 4 个测试文件 |
 | W6 | File I/O | ⬜ | |
 | W7 | Regular Expressions | ⬜ | |
 | W8 | Object-Oriented Programming | ⬜ | |
@@ -77,3 +77,16 @@ Python 基础阶段的正式教材，替代原计划的《Python 编程：从入
 - `professor.py` — 从 YouTube 链接提取视频 ID
 
 > Week 4 依赖 `emoji` `pyfiglet` `inflect` 三个第三方库，已在 `D:\llm-journey\.venv` 装好（2026-09-07）。
+
+**Week 5（Unit Tests）** — 2026-09-07
+把前面几题重构成可测试的纯函数，再为它们写测试：
+
+- `bank.py` / `test_bank.py`
+- `fuel.py` / `test_fuel.py`
+- `plates.py` / `test_plates.py`
+- `twttr.py` / `test_twttr.py`
+
+> 本机补装了 `pytest`。跑法：`.venv\Scripts\python.exe -m pytest cs50p/week5 -q`
+> 实测 15 passed。
+> ⚠️ `plates.py` 的「开头必须两个字母」这条仍未修（`cs50p/README.md` 已知问题表），
+> 自己的 `test_plates.py` 也没覆盖这个用例，所以测试全绿但规格仍不满足。
