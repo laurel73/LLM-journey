@@ -29,7 +29,7 @@ Python 基础阶段的正式教材，替代原计划的《Python 编程：从入
 | W3 | Exceptions | ✅ 完成 | fuel, grocery, outdated, taqueria |
 | W4 | Libraries | ✅ 完成 | adieu, bitcoin, emojize, figlet, guessing, professor |
 | W5 | Unit Tests | ✅ 完成 | bank, fuel, plates, twttr + 4 个测试文件 |
-| W6 | File I/O | ⬜ | |
+| W6 | File I/O | ✅ 完成 | lines, pizza, scourgify, shirt |
 | W7 | Regular Expressions | ⬜ | |
 | W8 | Object-Oriented Programming | ⬜ | |
 | W9 | Et Cetera | ⬜ | |
@@ -90,3 +90,14 @@ Python 基础阶段的正式教材，替代原计划的《Python 编程：从入
 > 实测 15 passed。
 > ⚠️ `plates.py` 的「开头必须两个字母」这条仍未修（`cs50p/README.md` 已知问题表），
 > 自己的 `test_plates.py` 也没覆盖这个用例，所以测试全绿但规格仍不满足。
+
+**Week 6（File I/O）** — 2026-09-08
+
+- `lines.py` — 统计 .py 文件的有效代码行数（跳过空行与注释行）
+- `pizza.py` — 读 CSV 菜单，用 `tabulate` 输出 grid 表格
+- `scourgify.py` — 把 `name` 列拆成 `first` / `last` 两列并写出新 CSV
+- `shirt.py` — 用 `PIL` 把衬衫图叠到人像上（`ImageOps.fit` + `paste`）
+
+> 本机补装了 `tabulate`（`pizza.py` 依赖）。
+> `shirt.py` 需要 `shirt.png` 和一张人像照片，这两个资源官方只在 codespace 里提供，
+> 本地没有，所以这题在本机跑不起来——不是代码问题。
