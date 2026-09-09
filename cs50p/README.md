@@ -30,9 +30,9 @@ Python 基础阶段的正式教材，替代原计划的《Python 编程：从入
 | W4 | Libraries | ✅ 完成 | adieu, bitcoin, emojize, figlet, guessing, professor |
 | W5 | Unit Tests | ✅ 完成 | bank, fuel, plates, twttr + 4 个测试文件 |
 | W6 | File I/O | ✅ 完成 | lines, pizza, scourgify, shirt |
-| W7 | Regular Expressions | ⬜ | |
-| W8 | Object-Oriented Programming | ⬜ | |
-| W9 | Et Cetera | ⬜ | |
+| W7 | Regular Expressions | ✅ 完成 | numb3rs, response, um, watch, working |
+| W8 | Object-Oriented Programming | ✅ 完成 | jar, seasons, shirtificate |
+| W9 | Et Cetera | ⬜ 讲座 | 无作业 |
 
 ## 目录说明
 
@@ -101,3 +101,23 @@ Python 基础阶段的正式教材，替代原计划的《Python 编程：从入
 > 本机补装了 `tabulate`（`pizza.py` 依赖）。
 > `shirt.py` 需要 `shirt.png` 和一张人像照片，这两个资源官方只在 codespace 里提供，
 > 本地没有，所以这题在本机跑不起来——不是代码问题。
+
+**Week 7（Regular Expressions）** — 2026-09-09
+
+- `numb3rs.py` — 校验 IPv4 地址（四段 0–255）
+- `response.py` — 用 `validators` 校验邮箱格式
+- `um.py` — 统计独立单词 "um" 的出现次数（词边界，非子串）
+- `watch.py` — 从 YouTube 链接提取视频 ID，还原成 `youtu.be/<id>` 短链
+- `working.py` — 解析 "9 AM to 5 PM" 这类时间区间，换算成 24 小时制
+
+> 本机补装了 `validators`（`response.py` 依赖）。
+
+**Week 8（Object-Oriented Programming）** — 2026-09-09
+
+- `jar.py` — `Jar` 类：容量校验、`deposit` / `withdraw` 抛 `ValueError`、`@property` 暴露属性、`__str__` 输出 🍪
+- `seasons.py` — 输入出生日期，输出活了多少分钟（`datetime` 相减 + `inflect` 拼英文数字）
+- `shirtificate.py` — 用 `fpdf` 生成 CS50 衬衫证书 PDF
+
+> 本机补装了 `fpdf2`（导入名是 `fpdf`）。
+> `shirtificate.png` 已从 CS50 官网取回放进 `week8/`，配上 `fpdf2` 后这题在本机可以跑通了。
+> ⚠️ 本人自述这题大比例借助 AI 完成、没有自己收尾——代码逻辑未逐行核对，回头有空再看。
