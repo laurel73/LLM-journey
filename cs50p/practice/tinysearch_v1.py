@@ -1,24 +1,14 @@
-"""TinySearch —— Python 结课自测（结课前一周，2026-09-09 收尾）
+"""TinySearch v1 —— 今晚跑通的版本（Step 1~3 + main）
 
-定位：CS50P 课程看完后，专项练 dict / list / 函数返回值手感。
-设计上是 AskMyDocs（结课项目）的第 0 周：用最少的代码把「文本 → 向量 → 余弦相似度检索」走通一遍，
-不引入任何第三方库。
-
-DOCS 是写死的 8 段中文短文。读一句问句，输出前 3 条最相似的 (分数, 原文)。
-
-进度（2026-09-09 收官时的状态）：
-    ✅ Step 1 分词与词表   tokenize / build_vocab
-    ✅ Step 2 词袋向量     vectorize
-    ✅ Step 3 余弦相似度   cosine
-    ✅ Step 5 主流程       main
-    ⏸  Step 4 Vec / Doc / TinySearch 三个 class 封装 —— 延后，等真遇到「函数太多串不起来」再回来
+用法：python tinysearch_v1.py，然后输入一句问句。
+这份是「先跑通」的版本，Step 4 的 class 包装留到明天。
 """
 
-import math
 import re
+import math
 
 
-# ---------------------------------------------------------------- 语料（直接写死，手机上不用碰文件系统）
+# ---------------------------------------------------------------- 语料
 
 DOCS = [
     "列表推导式可以在一行里生成新列表，比如 squares = [x*x for x in range(10)]。",
@@ -39,21 +29,21 @@ def main():
     vocab = build_vocab(DOCS)
 
     # 2. 把 8 篇文档各算成一个向量，存进 vecs
-    vess = []
+    vecs = []
     for doc in DOCS:
-        vess.append(vectorize(tokenize(doc), vocab))
+        vecs.append(vectorize(tokenize(doc), vocab))
 
     # 3. 把问句也算成一个向量
     q = input('想查什么？')
     qv = vectorize(tokenize(q), vocab)
 
-    # 4. 跟每篇比一次，存成 (分数, 原文) 的元组
+    # 4. 跟每篇比一次，存成 (分数, 原文)
     result = []
-    for i, v in enumerate(vess):
+    for i, v in enumerate(vecs):
         result.append((cosine(qv, v), DOCS[i]))
 
     # 5. 按分数降序，打印前 3 条
-    for score, text in sorted(result, reverse=True)[:3]:
+    for score, text in sorted(result, key=lambda t: t[0], reverse=True)[:3]:
         print(round(score, 3), text)
 
 
@@ -76,15 +66,15 @@ def build_vocab(docs):
 
 def vectorize(doc_tokens, vocab):
     """把一串词变成词袋向量：长度 == len(vocab)，第 i 位是第 i 个词出现几次。"""
-    ves = [0] * len(vocab)
+    vec = [0] * len(vocab)
     for w in doc_tokens:
         if w in vocab:
-            ves[vocab[w]] += 1
-    return ves
+            vec[vocab[w]] += 1
+    return vec
 
 
 def cosine(a, b):
-    """两个向量的余弦相似度 = 点积 / (|a| * |b|)。零向量当模长 1 处理，避免除零。"""
+    """两个向量的余弦相似度 = 点积 / (|a| * |b|)。零向量当模长 1 处理。"""
     n = sum(x * y for x, y in zip(a, b))
     i = math.sqrt(sum(x * x for x in a))
     j = math.sqrt(sum(y * y for y in b))

@@ -121,3 +121,16 @@ Python 基础阶段的正式教材，替代原计划的《Python 编程：从入
 > 本机补装了 `fpdf2`（导入名是 `fpdf`）。
 > `shirtificate.png` 已从 CS50 官网取回放进 `week8/`，配上 `fpdf2` 后这题在本机可以跑通了。
 > ⚠️ 本人自述这题大比例借助 AI 完成、没有自己收尾——代码逻辑未逐行核对，回头有空再看。
+
+**结课自测 · TinySearch** — 2026-09-09
+
+- `practice/tinysearch.py` — 一个 60 行左右的迷你文本检索器，纯标准库（`math` / `re`）
+- 流程：分词 → 建词表 → 词袋向量化 → 余弦相似度 → 取 top-3
+- `practice/结课自测-TinySearch.md` — 完整任务说明
+- `practice/tinysearch_v1.py` — 我整理的对照版（同功能，仅作参考）
+
+> 跑法：`.venv\Scripts\python.exe practice\tinysearch.py`，输入一句中文即可
+> 自评：练习目的不在算法而在手感——dict 编号、list 装数字、函数要 `return 值`、`enumerate` 出对偶
+> 进度：Steps 1/2/3 + 主流程完成，class 封装（Vec / Doc / TinySearch）**主动延后**——
+> 他自评「Class 是啥我也会写，但前面这些函数的变量不知道怎么串起来」，等真到了
+> 「散装函数太多串不起来」再回来包 class，比硬上更划算
