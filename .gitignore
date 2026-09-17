@@ -11,3 +11,20 @@ __pycache__/
 *.pem
 secrets.*
 
+# ── Agent 工作文件：只留本地，不提交 ──────────────────────────
+# 本仓库是 PUBLIC 的。下面这些是「跟进用的工作文件」，不是学习产出：
+#   AGENTS.md    含真名、邮箱、个人背景
+#   PROGRESS.md  含个人进度与状况
+# 学习产出（代码 / notebook / 笔记 / 周记）照常提交，不受影响。
+AGENTS.md
+PROGRESS.md
+
+# 清理工具的自动备份（.bak-YYYYMMDD-HHMMSS）
+*.bak-*
+
+# ── Agent 工作文件（续）：只留本地，不提交 ────────────────────
+#   tools/clean_homework.py   提交前清理引导标记的工作工具，不是学习产出
+#   CS50P笔记-完整版.zip        notes/ 下 .md 的打包件（二进制、内容重复）
+tools/clean_homework.py
+CS50P笔记-完整版.zip
+
